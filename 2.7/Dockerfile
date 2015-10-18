@@ -14,6 +14,8 @@ RUN mkdir -p /opt/dev/conf && \
 USER hareau
 COPY docker-entrypoint.sh /opt/dev/
 
+ENV PYTHON_EGG_CACHE /opt/dev/venv/.python-eggs
+
 VOLUME ["/opt/dev/venv"]
 
 ENTRYPOINT ["/opt/dev/docker-entrypoint.sh"]
