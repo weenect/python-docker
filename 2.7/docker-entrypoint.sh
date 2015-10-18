@@ -14,7 +14,7 @@ python setup.py develop
 envsubst < /opt/dev/conf/config_original.cfg > /opt/dev/conf/config.cfg
 
 # Check if additional packages.sh file exists
-if [[ -f "/opt/dev/conf/packages" ]]
+if [[ -f /opt/dev/conf/packages ]]
 then
     . /opt/dev/conf/packages
 fi
