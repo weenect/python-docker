@@ -1,10 +1,10 @@
 FROM python:2.7
 
-RUN groupadd -r hareau && useradd -r -g hareau --uid 1000 hareau
-
 RUN apt-get update && \
-    apt-get install -y curl git-core libssl-dev libreadline-dev libbz2-dev python-dev gettext netcat postgresql-client && \
+    apt-get install -y curl git-core libssl-dev libreadline-dev libbz2-dev python-dev gettext netcat postgresql-client sudo && \
     rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -r hareau && useradd -r -g hareau -G sudo --uid 1000 hareau
 
 RUN mkdir -p /opt/dev/conf && \
     mkdir -p /opt/dev/src && \

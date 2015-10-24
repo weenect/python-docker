@@ -1,10 +1,10 @@
 FROM python:2.7
 
-RUN groupadd -r hareau && useradd -r -g hareau --uid 1000 hareau
-
 RUN apt-get update && \
-    apt-get install -y python-dev gettext postgresql-client netcat && \
+    apt-get install -y python-dev gettext postgresql-client netcat sudo && \
     rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -r hareau && useradd -r -g hareau -G sudo --uid 1000 hareau
 
 RUN mkdir -p /opt/dev/conf && \
     mkdir -p /opt/dev/src && \
