@@ -3,7 +3,7 @@ FROM python:2.7
 RUN groupadd -r hareau && useradd -r -g hareau --uid 1000 hareau
 
 RUN apt-get update && \
-    apt-get install -y python-dev gettext && \
+    apt-get install -y python-dev gettext postgresql-client netcat && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /opt/dev/conf && \
@@ -19,4 +19,3 @@ ENV PYTHON_EGG_CACHE /opt/dev/venv/.python-eggs
 VOLUME ["/opt/dev/venv"]
 
 ENTRYPOINT ["/opt/dev/docker-entrypoint.sh"]
-
