@@ -35,7 +35,7 @@ FROM weenect/python:2.7
 
 COPY myconfigfile.cfg /opt/dev/conf/config_original.cfg
 
-EXPOSE 8080 8080
+EXPOSE 8080
 
 CMD ["/opt/dev/venv/bin/my-project-command", "serve", "/opt/dev/conf/config.cfg"]
 ```
